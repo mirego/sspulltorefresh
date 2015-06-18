@@ -306,21 +306,30 @@
 	}
 
 	__weak SSPullToRefreshView *weakSelf = self;
-	dispatch_semaphore_t semaphore = self.animationSemaphore;
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-		dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        SSPullToRefreshView *strongSelf = weakSelf;
+        if (strongSelf == nil) {
+            return;
+        }
+        
+		dispatch_semaphore_wait(strongSelf.animationSemaphore, DISPATCH_TIME_FOREVER);
 		dispatch_async(dispatch_get_main_queue(), ^{
+            SSPullToRefreshView *strongSelf = weakSelf;
+            if (strongSelf == nil) {
+                return;
+            }
+            
 			[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-				self.state = state;
-				self.expanded = expanded;
+				strongSelf.state = state;
+				strongSelf.expanded = expanded;
 			} completion:^(BOOL finished) {
-				dispatch_semaphore_signal(semaphore);
+				dispatch_semaphore_signal(strongSelf.animationSemaphore);
 				if (completion) {
 					completion();
 				}
 
 				if ([delegate respondsToSelector:@selector(pullToRefreshView:didTransitionToState:fromState:animated:)]) {
-					[delegate pullToRefreshView:weakSelf didTransitionToState:state fromState:fromState animated:animated];
+					[delegate pullToRefreshView:strongSelf didTransitionToState:state fromState:fromState animated:animated];
 				}
 			}];
 		});
