@@ -136,7 +136,10 @@ typedef NS_ENUM(NSUInteger, SSPullToRefreshViewStyle) {
 
  You should only initalize with this method and never move it to another scroll view during its lifetime.
  */
-- (id)initWithScrollView:(UIScrollView *)scrollView delegate:(id<SSPullToRefreshViewDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView delegate:(id<SSPullToRefreshViewDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithScrollView:(UIScrollView *)scrollView delegate:(id<SSPullToRefreshViewDelegate>)delegate;
 
 /**
  Call this method when you start loading. If you trigger loading another way besides pulling to refresh, call this
