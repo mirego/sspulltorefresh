@@ -38,7 +38,7 @@
 // }
 //
 
-@import UIKit;
+#include <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, SSPullToRefreshViewState) {
 	/// Most will say "Pull to refresh" in this state

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name      = 'SSPullToRefresh'
-  s.version   = '1.3.0'
+  s.version   = '1.3.0.1-mirego'
   s.summary   = 'Simple and highly customizable pull to refresh view.'
   s.homepage  = 'https://github.com/soffes/sspulltorefresh'
   s.author    = { 'Sam Soffes' => 'sam@soff.es' }

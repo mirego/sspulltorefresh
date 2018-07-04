@@ -8,7 +8,7 @@
 
 #import "SSPullToRefreshView.h"
 #import "SSPullToRefreshSimpleContentView.h"
-@import QuartzCore;
+#import <QuartzCore/QuartzCore.h>
 
 @interface SSPullToRefreshView ()
 @property (nonatomic, readwrite) SSPullToRefreshViewState state;
