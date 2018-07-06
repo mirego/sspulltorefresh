@@ -155,14 +155,6 @@
 
 #pragma mark - Initializer
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithFrame:frame scrollView:nil delegate:nil];
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    return [self initWithFrame:CGRectZero scrollView:nil delegate:nil];
-}
-
 - (instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView delegate:(id<SSPullToRefreshViewDelegate>)delegate {
     if ((self = [super initWithFrame:frame])) {
         for (UIView *view in self.scrollView.subviews) {

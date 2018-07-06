@@ -130,10 +130,8 @@ typedef NS_ENUM(NSUInteger, SSPullToRefreshViewStyle) {
  */
 @property (nonatomic, assign) SSPullToRefreshViewStyle style;
 
-
 - (instancetype)initWithFrame:(CGRect)aRect NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
-
 
 /**
  All you need to do to add this view to your scroll view is call this method (passing in the scroll view). That's it.
@@ -141,8 +139,6 @@ typedef NS_ENUM(NSUInteger, SSPullToRefreshViewStyle) {
 
  You should only initalize with this method and never move it to another scroll view during its lifetime.
  */
-- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView delegate:(id<SSPullToRefreshViewDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView delegate:(id<SSPullToRefreshViewDelegate>)delegate;
 

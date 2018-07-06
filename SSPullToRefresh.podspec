@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   }
   s.source_files = 'SSPullToRefresh/**/*.{h,m}'
   s.description = 'SSPullToRefresh is a simple and highly customizable pull to refresh view. It lets you implement a content view separate so you don\'t have to hack up the pulling logic everything you want to customize the appearance.'
-  s.platform = :ios, '5.0'
+  s.platform = :ios, '6.0'
 end
